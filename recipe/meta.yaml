@@ -1,5 +1,5 @@
-{% set version = "0.1.0" %}
-{% set core_version = ">=0.1.0,<0.2.0" %}
+{% set version = "0.1.1" %}
+{% set core_version = ">=0.1.1,<0.2.0" %}
 
 package:
   name: jupyterlite
@@ -7,11 +7,8 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/j/jupyterlite/jupyterlite-{{ version }}.tar.gz
-    sha256: 6e9949bc51247368bea8a0136256694255ace315e6e057020d29b36fe92c3c38
-  - fn: jupyterlite-{{ version }}-LICENSE
-    url: https://raw.githubusercontent.com/jupyterlite/jupyterlite/v{{ version }}/LICENSE
-    sha256: 502e99ce4df4cd9fe0b14f6acb7c95553a5dd9615982fb246c233330f317eff4
-  
+    sha256: 7188c672116ef96aea2eec6eaa83c6b268a6b9454bdf3375724dc1f16ae08718
+
 build:
   number: 0
   noarch: python
@@ -42,8 +39,7 @@ about:
   home: https://github.com/jupyterlite/jupyterlite
   summary: JupyterLite metapackage
   license: BSD-3-Clause
-  # TODO: use as-packaged license https://github.com/jupyterlite/jupyterlite/pull/1039
-  license_file: jupyterlite-{{ version }}-LICENSE
+  license_file: LICENSE
   doc_url: https://jupyterlite.readthedocs.io
 
 extra:
