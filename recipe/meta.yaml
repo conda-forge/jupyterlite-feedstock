@@ -1,7 +1,5 @@
-{% set version = "0.1.3" %}
-{% set core_version = ">=0.1.3,<0.2.0" %}
-# while often very close, this is not always the same as the core version 
-{% set pyodide_kernel_version = ">=0.1.2,<0.2.0" %}
+{% set version = "0.2.0" %}
+{% set core_version = ">=0.2.0,<0.3.0" %}
 
 package:
   name: jupyterlite
@@ -9,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlite/jupyterlite-{{ version }}.tar.gz
-  sha256: 20eca801bd05d12aa1af7eaa5a0b7b0195a26dd0da7e04fcc244fc04ae5de701
+  sha256: 953bd8c6a2d976d735f9f416fdba17da2d0b6daee6d6471481a08563a166d3df
 
 build:
   number: 0
@@ -24,7 +22,6 @@ requirements:
   run:
     - jupyterlite-core {{ core_version }}
     - jupyterlite-javascript-kernel {{ core_version }}
-    - jupyterlite-pyodide-kernel {{ pyodide_kernel_version }}
     - python >=3.8
 
 test:
