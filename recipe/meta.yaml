@@ -1,6 +1,5 @@
-{% set core_version = ">=0.2.2,<0.3.0" %}
 {% set version = "0.2.3" %}
-{% set core_version = ">=0.2.2,<0.3.0" %}
+{% set core_version = ">=" ~ version ~ ",<0.3.0" %}
 
 package:
   name: jupyterlite
