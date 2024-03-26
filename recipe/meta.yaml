@@ -1,5 +1,5 @@
-{% set version = "0.2.3" %}
-{% set core_version = ">=" ~ version ~ ",<0.3.0" %}
+{% set version = "0.3.0" %}
+{% set core_version = ">=" ~ version ~ ",<0.4.0" %}
 
 package:
   name: jupyterlite
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlite/jupyterlite-{{ version }}.tar.gz
-  sha256: 20dcbfd9e1f850c96ffa46a5f3f98116e481d0be198fc482491c15d5411fe510
+  sha256: 824c9a6dad850766ececf4863052b944543b0650fe1be8c7a99d9df0150a5c60
 
 build:
   number: 0
@@ -21,7 +21,6 @@ requirements:
     - python >=3.8
   run:
     - jupyterlite-core {{ core_version }}
-    - jupyterlite-javascript-kernel {{ core_version }}
     - python >=3.8
 
 test:
