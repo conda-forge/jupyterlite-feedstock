@@ -1,5 +1,5 @@
 {% set version = "0.3.0" %}
-{% set core_version = ">=" ~ version ~ ",<0.3.0" %}
+{% set core_version = ">=" ~ version ~ ",<0.4.0" %}
 
 package:
   name: jupyterlite
@@ -21,7 +21,6 @@ requirements:
     - python >=3.8
   run:
     - jupyterlite-core {{ core_version }}
-    - jupyterlite-javascript-kernel {{ core_version }}
     - python >=3.8
 
 test:
