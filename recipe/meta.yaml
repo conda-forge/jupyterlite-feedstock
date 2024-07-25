@@ -1,4 +1,4 @@
-{% set version = "0.3.0" %}
+{% set version = "0.4.0" %}
 {% set core_version = ">=" ~ version ~ ",<0.4.0" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/j/jupyterlite/jupyterlite-{{ version }}.tar.gz
-  sha256: 824c9a6dad850766ececf4863052b944543b0650fe1be8c7a99d9df0150a5c60
+  sha256: a27ff00dade260457a717730b48f06d2d9c6af6572745af5066f232bd5cf07cb
 
 build:
   number: 0
