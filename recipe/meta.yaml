@@ -26,15 +26,15 @@ requirements:
     - python >={{ python_min }}
 
 test:
-  imports:
+  requires:
+    - pip
     - python {{ python_min }}
+  imports:
     - jupyterlite
   commands:
     - pip check
     - jupyter lite --version
     - jupyter lite --help
-  requires:
-    - pip
 
 about:
   home: https://github.com/jupyterlite/jupyterlite
