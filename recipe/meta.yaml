@@ -1,27 +1,29 @@
-{% set version = "0.4.3" %}
+{% set version = "0.4.4" %}
 {% set core_version = ">=" ~ version ~ ",<0.5.0" %}
+{% set python_min = python_min | default("3.9") }
 
 package:
   name: jupyterlite
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/j/jupyterlite/jupyterlite-{{ version }}.tar.gz
-  sha256: b6926d28eecc2e16506499360fbc1b67370cd8b330f957e1109fec59e8a80bd3
+  url: https://pypi.org/packages/source/j/jupyterlite/jupyterlite-{{ version }}.tar.gz
+  sha256: aac034c0e02f23f8fdf512790406f2ae2507ce9e327dd285849b2fd5341fd8c7
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script:
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
 
 requirements:
   host:
     - hatchling >=1.6.3,<2
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
     - jupyterlite-core {{ core_version }}
-    - python >=3.8
+    - python >={{ python_min }}
 
 test:
   imports:
