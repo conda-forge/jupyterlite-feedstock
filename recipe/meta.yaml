@@ -27,6 +27,7 @@ requirements:
 
 test:
   imports:
+    - python {{ python_min }}
     - jupyterlite
   commands:
     - pip check
