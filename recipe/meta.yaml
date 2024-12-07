@@ -1,4 +1,4 @@
-{% set version = "0.4.4" %}
+{% set version = "0.4.5" %}
 {% set core_version = ">=" ~ version ~ ",<0.5.0" %}
 {% set python_min = python_min | default("3.9") %}
 
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite/jupyterlite-{{ version }}.tar.gz
-  sha256: aac034c0e02f23f8fdf512790406f2ae2507ce9e327dd285849b2fd5341fd8c7
+  sha256: 473de4b1dba6385670ca25b46aa8bdfe8bec665abaf54b3ddd28557611b12e97
 
 build:
   number: 0
   noarch: python
-  script: 
+  script:
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
 
 requirements:
