@@ -1,6 +1,4 @@
 {% set version = "0.5.0" %}
-{% set core_version = ">=" ~ version ~ ",<0.5.0" %}
-{% set python_min = python_min | default("3.9") %}
 
 package:
   name: jupyterlite
@@ -22,7 +20,7 @@ requirements:
     - pip
     - python {{ python_min }}
   run:
-    - jupyterlite-core {{ core_version }}
+    - jupyterlite-core {{ version }}
     - python >={{ python_min }}
 
 test:
