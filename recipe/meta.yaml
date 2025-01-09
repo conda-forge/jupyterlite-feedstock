@@ -1,6 +1,4 @@
-{% set version = "0.4.5" %}
-{% set core_version = ">=" ~ version ~ ",<0.5.0" %}
-{% set python_min = python_min | default("3.9") %}
+{% set version = "0.5.0" %}
 
 package:
   name: jupyterlite
@@ -8,7 +6,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite/jupyterlite-{{ version }}.tar.gz
-  sha256: 473de4b1dba6385670ca25b46aa8bdfe8bec665abaf54b3ddd28557611b12e97
+  sha256: 8f0415cad2864d5bad0d1fb247c7deec466b003c57c4b5503276f6ff37e551f7
 
 build:
   number: 0
@@ -22,7 +20,7 @@ requirements:
     - pip
     - python {{ python_min }}
   run:
-    - jupyterlite-core {{ core_version }}
+    - jupyterlite-core {{ version }}
     - python >={{ python_min }}
 
 test:
