@@ -9,7 +9,7 @@ Package license: BSD-3-Clause
 
 Summary: JupyterLite metapackage
 
-Documentation: https://jupyterlite.readthedocs.io
+Documentation: https://jupyterlite.readthedocs.io/
 
 Current build status
 ====================
