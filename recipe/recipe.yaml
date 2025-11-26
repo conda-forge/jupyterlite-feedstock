@@ -1,9 +1,9 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
 schema_version: 1
 
-
 context:
   version: "0.7.0"
+  python_check_max: "3.14"
 
 package:
   name: jupyterlite
@@ -34,7 +34,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - 3.13.*
+        - ${{ python_check_max }}.*
   - requirements:
       run:
         - python ${{ python_min }}.*
