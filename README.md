@@ -3,11 +3,13 @@ About jupyterlite-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/jupyterlite-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/jupyterlite/jupyterlite
+Home: https://pypi.org/project/jupyterlite
 
 Package license: BSD-3-Clause
 
 Summary: JupyterLite metapackage
+
+Development: https://github.com/jupyterlite/jupyterlite
 
 Documentation: https://jupyterlite.readthedocs.io/
 
