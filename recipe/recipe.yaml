@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.8.2"
+  version: "0.8.3"
   python_check_max: "3.14"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/j/jupyterlite/jupyterlite-${{ version }}.tar.gz
-  sha256: 0920c499477b68bd8860b1bab8ba2eab8af29d61534d52b1edb0169935f78dc7
+  sha256: 3f5cb91cb4da89efb9bb16b9e432a69c60f6f6bc94584fc4bd6699b8a1de4794
 
 build:
   number: 0
