@@ -46,7 +46,7 @@ tests:
     script:
       - jupyter lite --help
       - jupyter lite --version
-      - jupyter lite --version | ${{ "grep -iE " if unix else "findstr /r /c:"}}${{ version | replace(".", "\.") }}
+      - jupyter lite --version | ${{ "grep -iE " if unix else "findstr /r /c:"}}${{ version | replace(".", "\\.") }}
 
 about:
   summary: JupyterLite metapackage
