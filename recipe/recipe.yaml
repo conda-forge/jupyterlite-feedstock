@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "0.8.5"
+  version: "0.8.6"
   python_check_max: "3.14"
 
 package:
@@ -10,14 +10,14 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/j/jupyterlite/jupyterlite-${{ version }}.tar.gz
-  sha256: bc053b1f6f3bd501a21e4392b23884ab0d32d8848bfffedc91c603542447cf80
+  url: https://files.pythonhosted.org/packages/source/j/jupyterlite/jupyterlite-${{ version }}.tar.gz
+  sha256: c8b14749b2f419defd9769773616ab6a26b262071d0c02301f0e54525663bdf2
 
 build:
   number: 0
   noarch: python
   script:
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check --check-build-dependencies
 
 requirements:
   host:
@@ -29,6 +29,11 @@ requirements:
     - python >=${{ python_min }}
 
 tests:
+  - package_contents:
+      strict: true
+      site_packages:
+        - jupyterlite/**
+        - jupyterlite-${{ version }}.dist-info/**
   - python:
       imports: jupyterlite
       pip_check: true
@@ -39,8 +44,9 @@ tests:
       run:
         - python ${{ python_min }}.*
     script:
-      - jupyter lite --version
       - jupyter lite --help
+      - jupyter lite --version
+      - jupyter lite --version | ${{ "grep -iE " if unix else "findstr /r /c:"}}${{ version | replace(".", "\\.") }}
 
 about:
   summary: JupyterLite metapackage
